@@ -1,11 +1,12 @@
-import '@testing-library/jest-dom'
+import '@testing-library/jest-dom';
+import { vi } from 'vitest';
 
 // Mock navigator.clipboard
 Object.assign(navigator, {
   clipboard: {
     writeText: vi.fn(),
   },
-})
+});
 
 // Mock window.matchMedia
 Object.defineProperty(window, 'matchMedia', {
@@ -20,4 +21,4 @@ Object.defineProperty(window, 'matchMedia', {
     removeEventListener: vi.fn(),
     dispatchEvent: vi.fn(),
   })),
-}) 
+});

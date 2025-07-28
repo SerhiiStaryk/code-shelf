@@ -1,24 +1,25 @@
-import React from 'react'
-import { Link as RouterLink } from 'react-router-dom'
+import React from 'react';
+import { Link as RouterLink } from 'react-router-dom';
+import { Box, Typography, Card, CardContent, CardActions, Button, Paper } from '@mui/material';
 import {
-  Box,
-  Typography,
-  Card,
-  CardContent,
-  CardActions,
-  Button,
-  Paper,
-} from '@mui/material'
-import { Code, Lightbulb, Share, Speed, Palette, Style, IntegrationInstructions, AutoAwesome } from '@mui/icons-material'
+  Code,
+  Lightbulb,
+  Share,
+  Speed,
+  Palette,
+  Style,
+  IntegrationInstructions,
+  AutoAwesome,
+} from '@mui/icons-material';
 
 interface Feature {
-  icon: React.ReactElement
-  title: string
-  description: string
-  path: string
+  icon: React.ReactElement;
+  title: string;
+  description: string;
+  path: string;
 }
 
-const Home: React.FC = () => {
+export const Home: React.FC = () => {
   const features: Feature[] = [
     {
       icon: <Code sx={{ fontSize: 40, color: 'primary.main' }} />,
@@ -35,7 +36,7 @@ const Home: React.FC = () => {
     {
       icon: <Palette sx={{ fontSize: 40, color: 'success.main' }} />,
       title: 'Styled Components',
-      description: 'Explore advanced styling techniques and patterns using Material-UI\'s styled API.',
+      description: "Explore advanced styling techniques and patterns using Material-UI's styled API.",
       path: '/styled-components',
     },
     {
@@ -68,7 +69,7 @@ const Home: React.FC = () => {
       description: 'Built with React and Material-UI for a smooth, modern experience.',
       path: '/showcase',
     },
-  ]
+  ];
 
   return (
     <Box>
@@ -84,18 +85,25 @@ const Home: React.FC = () => {
           textAlign: 'center',
         }}
       >
-        <Typography variant="h3" component="h1" sx={{ mb: 2, fontWeight: 'bold' }}>
+        <Typography
+          variant='h3'
+          component='h1'
+          sx={{ mb: 2, fontWeight: 'bold' }}
+        >
           Code Showcase App
         </Typography>
-        <Typography variant="h6" sx={{ mb: 4, opacity: 0.9 }}>
+        <Typography
+          variant='h6'
+          sx={{ mb: 4, opacity: 0.9 }}
+        >
           Share, explore, and learn from beautiful code examples
         </Typography>
         <Box sx={{ display: 'flex', gap: 2, justifyContent: 'center', flexWrap: 'wrap' }}>
           <Button
             component={RouterLink}
-            to="/showcase"
-            variant="contained"
-            size="large"
+            to='/showcase'
+            variant='contained'
+            size='large'
             sx={{
               backgroundColor: 'white',
               color: 'primary.main',
@@ -108,9 +116,9 @@ const Home: React.FC = () => {
           </Button>
           <Button
             component={RouterLink}
-            to="/examples"
-            variant="outlined"
-            size="large"
+            to='/examples'
+            variant='outlined'
+            size='large'
             sx={{
               borderColor: 'white',
               color: 'white',
@@ -126,11 +134,21 @@ const Home: React.FC = () => {
       </Paper>
 
       {/* Features Grid */}
-      <Typography variant="h4" component="h2" sx={{ mb: 4, textAlign: 'center' }}>
+      <Typography
+        variant='h4'
+        component='h2'
+        sx={{ mb: 4, textAlign: 'center' }}
+      >
         Features
       </Typography>
-      
-      <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', sm: '1fr 1fr', md: 'repeat(3, 1fr)', lg: 'repeat(4, 1fr)' }, gap: 3 }}>
+
+      <Box
+        sx={{
+          display: 'grid',
+          gridTemplateColumns: { xs: '1fr', sm: '1fr 1fr', md: 'repeat(3, 1fr)', lg: 'repeat(4, 1fr)' },
+          gap: 3,
+        }}
+      >
         {features.map((feature, index) => (
           <Card
             key={index}
@@ -146,13 +164,18 @@ const Home: React.FC = () => {
             }}
           >
             <CardContent sx={{ flexGrow: 1, textAlign: 'center' }}>
-              <Box sx={{ mb: 2 }}>
-                {feature.icon}
-              </Box>
-              <Typography variant="h6" component="h3" sx={{ mb: 1, fontWeight: 600 }}>
+              <Box sx={{ mb: 2 }}>{feature.icon}</Box>
+              <Typography
+                variant='h6'
+                component='h3'
+                sx={{ mb: 1, fontWeight: 600 }}
+              >
                 {feature.title}
               </Typography>
-              <Typography variant="body2" color="text.secondary">
+              <Typography
+                variant='body2'
+                color='text.secondary'
+              >
                 {feature.description}
               </Typography>
             </CardContent>
@@ -160,8 +183,8 @@ const Home: React.FC = () => {
               <Button
                 component={RouterLink}
                 to={feature.path}
-                size="small"
-                color="primary"
+                size='small'
+                color='primary'
               >
                 Learn More
               </Button>
@@ -172,24 +195,30 @@ const Home: React.FC = () => {
 
       {/* Quick Start Section */}
       <Paper sx={{ p: 4, mt: 6, borderRadius: 3 }}>
-        <Typography variant="h5" component="h3" sx={{ mb: 3, fontWeight: 600 }}>
+        <Typography
+          variant='h5'
+          component='h3'
+          sx={{ mb: 3, fontWeight: 600 }}
+        >
           Quick Start
         </Typography>
-        <Typography variant="body1" sx={{ mb: 3 }}>
-          Ready to showcase your code? Head over to the Code Showcase page to see examples of how to display your code snippets with beautiful syntax highlighting and copy functionality.
+        <Typography
+          variant='body1'
+          sx={{ mb: 3 }}
+        >
+          Ready to showcase your code? Head over to the Code Showcase page to see examples of how to display your code
+          snippets with beautiful syntax highlighting and copy functionality.
         </Typography>
         <Button
           component={RouterLink}
-          to="/showcase"
-          variant="contained"
-          size="large"
+          to='/showcase'
+          variant='contained'
+          size='large'
           startIcon={<Code />}
         >
           Get Started
         </Button>
       </Paper>
     </Box>
-  )
-}
-
-export default Home 
+  );
+};

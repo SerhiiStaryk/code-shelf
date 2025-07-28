@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import {
   Box,
   Typography,
@@ -6,7 +6,6 @@ import {
   CardContent,
   Button,
   Chip,
-  Divider,
   Paper,
   Tabs,
   Tab,
@@ -16,25 +15,10 @@ import {
   Badge,
   Switch,
   FormControlLabel,
-} from '@mui/material'
-import {
-  styled,
-  keyframes,
-  css,
-  ThemeProvider,
-  createTheme,
-} from '@mui/material/styles'
-import {
-  Favorite,
-  Star,
-  TrendingUp,
-  Code,
-  Palette,
-  Brush,
-  AutoAwesome,
-  Psychology,
-} from '@mui/icons-material'
-import CodeBlock from '../components/CodeBlock'
+} from '@mui/material';
+import { styled, keyframes, css, ThemeProvider, createTheme } from '@mui/material/styles';
+import { Favorite, Star, TrendingUp, Code, Brush, AutoAwesome } from '@mui/icons-material';
+import CodeBlock from '../../components/CodeBlock';
 
 // Animated keyframes
 const fadeIn = keyframes`
@@ -46,7 +30,7 @@ const fadeIn = keyframes`
     opacity: 1;
     transform: translateY(0);
   }
-`
+`;
 
 const pulse = keyframes`
   0% {
@@ -58,7 +42,7 @@ const pulse = keyframes`
   100% {
     transform: scale(1);
   }
-`
+`;
 
 const gradientShift = keyframes`
   0% {
@@ -70,10 +54,10 @@ const gradientShift = keyframes`
   100% {
     background-position: 0% 50%;
   }
-`
+`;
 
 // Basic styled components
-const StyledButton = styled(Button)(({ theme }) => ({
+const StyledButton = styled(Button)(() => ({
   background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
   border: 0,
   borderRadius: 3,
@@ -84,7 +68,7 @@ const StyledButton = styled(Button)(({ theme }) => ({
   '&:hover': {
     background: 'linear-gradient(45deg, #FF8E53 30%, #FE6B8B 90%)',
   },
-}))
+}));
 
 const AnimatedCard = styled(Card)(({ theme }) => ({
   animation: `${fadeIn} 0.6s ease-out`,
@@ -93,9 +77,9 @@ const AnimatedCard = styled(Card)(({ theme }) => ({
     transform: 'translateY(-8px)',
     boxShadow: theme.shadows[8],
   },
-}))
+}));
 
-const GradientText = styled(Typography)(({ theme }) => ({
+const GradientText = styled(Typography)(() => ({
   background: 'linear-gradient(45deg, #FE6B8B, #FF8E53, #FE6B8B)',
   backgroundSize: '200% 200%',
   animation: `${gradientShift} 3s ease infinite`,
@@ -103,9 +87,9 @@ const GradientText = styled(Typography)(({ theme }) => ({
   WebkitTextFillColor: 'transparent',
   backgroundClip: 'text',
   fontWeight: 'bold',
-}))
+}));
 
-const PulseButton = styled(Button)(({ theme }) => ({
+const PulseButton = styled(Button)(() => ({
   animation: `${pulse} 2s infinite`,
   background: 'linear-gradient(45deg, #2196F3 30%, #21CBF3 90%)',
   color: 'white',
@@ -113,7 +97,7 @@ const PulseButton = styled(Button)(({ theme }) => ({
     animation: 'none',
     transform: 'scale(1.1)',
   },
-}))
+}));
 
 // Conditional styling
 const DynamicCard = styled(Card)<{ $isActive?: boolean }>(({ theme, $isActive }) => ({
@@ -121,7 +105,7 @@ const DynamicCard = styled(Card)<{ $isActive?: boolean }>(({ theme, $isActive })
   border: $isActive ? `2px solid ${theme.palette.primary.main}` : '2px solid transparent',
   backgroundColor: $isActive ? theme.palette.primary.light + '20' : theme.palette.background.paper,
   transform: $isActive ? 'scale(1.02)' : 'scale(1)',
-}))
+}));
 
 // Responsive styled component
 const ResponsiveBox = styled(Box)(({ theme }) => ({
@@ -132,16 +116,16 @@ const ResponsiveBox = styled(Box)(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
     padding: theme.spacing(6),
   },
-}))
+}));
 
 // Glass morphism effect
-const GlassCard = styled(Card)(({ theme }) => ({
+const GlassCard = styled(Card)(() => ({
   background: 'rgba(255, 255, 255, 0.1)',
   backdropFilter: 'blur(10px)',
   border: '1px solid rgba(255, 255, 255, 0.2)',
   borderRadius: 16,
   boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.37)',
-}))
+}));
 
 // Custom theme
 const customTheme = createTheme({
@@ -158,7 +142,7 @@ const customTheme = createTheme({
       fontWeight: 700,
     },
   },
-})
+});
 
 // CSS-in-JS example
 const cssExample = css`
@@ -173,43 +157,72 @@ const cssExample = css`
     transform: translateY(-5px);
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
   }
-`
+`;
 
-const StyledComponents: React.FC = () => {
-  const [activeTab, setActiveTab] = useState(0)
-  const [isActive, setIsActive] = useState(false)
+export const StyledComponents: React.FC = () => {
+  const [activeTab, setActiveTab] = useState(0);
+  const [isActive, setIsActive] = useState(false);
 
   const handleTabChange = (event: React.SyntheticEvent, newValue: number) => {
-    setActiveTab(newValue)
-  }
+    setActiveTab(newValue);
+  };
 
   return (
     <Box>
-      <Typography variant="h3" component="h1" gutterBottom>
-        <GradientText variant="h3">
-          Styled Components Showcase
-        </GradientText>
+      <Typography
+        variant='h3'
+        component='h1'
+        gutterBottom
+      >
+        <GradientText variant='h3'>Styled Components Showcase</GradientText>
       </Typography>
-      
-      <Typography variant="h6" color="text.secondary" paragraph>
+
+      <Typography
+        variant='h6'
+        color='text.secondary'
+        paragraph
+      >
         Explore various styling techniques and patterns using Material-UI's styled API
       </Typography>
 
-      <Tabs value={activeTab} onChange={handleTabChange} sx={{ mb: 4 }}>
-        <Tab label="Basic Examples" icon={<Brush />} />
-        <Tab label="Advanced Patterns" icon={<AutoAwesome />} />
-        <Tab label="Animations" icon={<TrendingUp />} />
-        <Tab label="Code Examples" icon={<Code />} />
+      <Tabs
+        value={activeTab}
+        onChange={handleTabChange}
+        sx={{ mb: 4 }}
+      >
+        <Tab
+          label='Basic Examples'
+          icon={<Brush />}
+        />
+        <Tab
+          label='Advanced Patterns'
+          icon={<AutoAwesome />}
+        />
+        <Tab
+          label='Animations'
+          icon={<TrendingUp />}
+        />
+        <Tab
+          label='Code Examples'
+          icon={<Code />}
+        />
       </Tabs>
 
       {activeTab === 0 && (
         <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', md: '1fr 1fr' }, gap: 4 }}>
           <AnimatedCard>
             <CardContent>
-              <Typography variant="h6" gutterBottom>
+              <Typography
+                variant='h6'
+                gutterBottom
+              >
                 Basic Styled Button
               </Typography>
-              <Typography variant="body2" color="text.secondary" paragraph>
+              <Typography
+                variant='body2'
+                color='text.secondary'
+                paragraph
+              >
                 A button with gradient background and hover effects
               </Typography>
               <StyledButton>Gradient Button</StyledButton>
@@ -218,10 +231,17 @@ const StyledComponents: React.FC = () => {
 
           <AnimatedCard>
             <CardContent>
-              <Typography variant="h6" gutterBottom>
+              <Typography
+                variant='h6'
+                gutterBottom
+              >
                 Pulse Animation Button
               </Typography>
-              <Typography variant="body2" color="text.secondary" paragraph>
+              <Typography
+                variant='body2'
+                color='text.secondary'
+                paragraph
+              >
                 Button with continuous pulse animation
               </Typography>
               <PulseButton>Pulse Button</PulseButton>
@@ -230,33 +250,50 @@ const StyledComponents: React.FC = () => {
 
           <DynamicCard $isActive={isActive}>
             <CardContent>
-              <Typography variant="h6" gutterBottom>
+              <Typography
+                variant='h6'
+                gutterBottom
+              >
                 Dynamic Styling
               </Typography>
-              <Typography variant="body2" color="text.secondary" paragraph>
+              <Typography
+                variant='body2'
+                color='text.secondary'
+                paragraph
+              >
                 Card with conditional styling based on state
               </Typography>
               <FormControlLabel
                 control={
                   <Switch
                     checked={isActive}
-                    onChange={(e) => setIsActive(e.target.checked)}
+                    onChange={e => setIsActive(e.target.checked)}
                   />
                 }
-                label="Toggle Active State"
+                label='Toggle Active State'
               />
             </CardContent>
           </DynamicCard>
 
           <GlassCard>
             <CardContent>
-              <Typography variant="h6" gutterBottom>
+              <Typography
+                variant='h6'
+                gutterBottom
+              >
                 Glass Morphism Effect
               </Typography>
-              <Typography variant="body2" color="text.secondary" paragraph>
+              <Typography
+                variant='body2'
+                color='text.secondary'
+                paragraph
+              >
                 Modern glass-like appearance with backdrop blur
               </Typography>
-              <Chip label="Glass Effect" color="primary" />
+              <Chip
+                label='Glass Effect'
+                color='primary'
+              />
             </CardContent>
           </GlassCard>
         </Box>
@@ -265,13 +302,14 @@ const StyledComponents: React.FC = () => {
       {activeTab === 1 && (
         <Stack spacing={4}>
           <Paper sx={{ p: 3 }}>
-            <Typography variant="h5" gutterBottom>
+            <Typography
+              variant='h5'
+              gutterBottom
+            >
               Responsive Design
             </Typography>
             <ResponsiveBox sx={{ bgcolor: 'grey.100', borderRadius: 2 }}>
-              <Typography>
-                This box adapts its padding based on screen size using theme breakpoints
-              </Typography>
+              <Typography>This box adapts its padding based on screen size using theme breakpoints</Typography>
             </ResponsiveBox>
           </Paper>
 
@@ -279,13 +317,23 @@ const StyledComponents: React.FC = () => {
             <ThemeProvider theme={customTheme}>
               <Card>
                 <CardContent>
-                  <Typography variant="h6" gutterBottom>
+                  <Typography
+                    variant='h6'
+                    gutterBottom
+                  >
                     Custom Theme
                   </Typography>
-                  <Typography variant="body2" color="text.secondary" paragraph>
+                  <Typography
+                    variant='body2'
+                    color='text.secondary'
+                    paragraph
+                  >
                     Component using a custom theme with different colors
                   </Typography>
-                  <Button variant="contained" color="primary">
+                  <Button
+                    variant='contained'
+                    color='primary'
+                  >
                     Custom Theme Button
                   </Button>
                 </CardContent>
@@ -294,16 +342,21 @@ const StyledComponents: React.FC = () => {
 
             <Card>
               <CardContent>
-                <Typography variant="h6" gutterBottom>
+                <Typography
+                  variant='h6'
+                  gutterBottom
+                >
                   CSS-in-JS Example
                 </Typography>
-                <Typography variant="body2" color="text.secondary" paragraph>
+                <Typography
+                  variant='body2'
+                  color='text.secondary'
+                  paragraph
+                >
                   Using the css helper for complex styles
                 </Typography>
                 <Box sx={cssExample}>
-                  <Typography variant="body1">
-                    This box uses the css helper for styling
-                  </Typography>
+                  <Typography variant='body1'>This box uses the css helper for styling</Typography>
                 </Box>
               </CardContent>
             </Card>
@@ -315,13 +368,23 @@ const StyledComponents: React.FC = () => {
         <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', md: 'repeat(3, 1fr)' }, gap: 4 }}>
           <AnimatedCard>
             <CardContent>
-              <Typography variant="h6" gutterBottom>
+              <Typography
+                variant='h6'
+                gutterBottom
+              >
                 Fade In Animation
               </Typography>
-              <Typography variant="body2" color="text.secondary" paragraph>
+              <Typography
+                variant='body2'
+                color='text.secondary'
+                paragraph
+              >
                 Cards animate in with a fade effect
               </Typography>
-              <Badge badgeContent={4} color="primary">
+              <Badge
+                badgeContent={4}
+                color='primary'
+              >
                 <Avatar>
                   <Favorite />
                 </Avatar>
@@ -331,30 +394,51 @@ const StyledComponents: React.FC = () => {
 
           <AnimatedCard>
             <CardContent>
-              <Typography variant="h6" gutterBottom>
+              <Typography
+                variant='h6'
+                gutterBottom
+              >
                 Hover Effects
               </Typography>
-              <Typography variant="body2" color="text.secondary" paragraph>
+              <Typography
+                variant='body2'
+                color='text.secondary'
+                paragraph
+              >
                 Cards lift up on hover with enhanced shadows
               </Typography>
-              <Stack direction="row" spacing={1}>
-                <Chip icon={<Star />} label="Hover Me" />
-                <Chip icon={<TrendingUp />} label="Lift Effect" />
+              <Stack
+                direction='row'
+                spacing={1}
+              >
+                <Chip
+                  icon={<Star />}
+                  label='Hover Me'
+                />
+                <Chip
+                  icon={<TrendingUp />}
+                  label='Lift Effect'
+                />
               </Stack>
             </CardContent>
           </AnimatedCard>
 
           <AnimatedCard>
             <CardContent>
-              <Typography variant="h6" gutterBottom>
+              <Typography
+                variant='h6'
+                gutterBottom
+              >
                 Gradient Animation
               </Typography>
-              <Typography variant="body2" color="text.secondary" paragraph>
+              <Typography
+                variant='body2'
+                color='text.secondary'
+                paragraph
+              >
                 Text with animated gradient background
               </Typography>
-              <GradientText variant="h6">
-                Animated Text
-              </GradientText>
+              <GradientText variant='h6'>Animated Text</GradientText>
             </CardContent>
           </AnimatedCard>
         </Box>
@@ -362,16 +446,16 @@ const StyledComponents: React.FC = () => {
 
       {activeTab === 3 && (
         <Stack spacing={4}>
-          <Alert severity="info">
-            <Typography variant="body2">
+          <Alert severity='info'>
+            <Typography variant='body2'>
               These code examples demonstrate how to implement the styled components shown above.
             </Typography>
           </Alert>
 
           <CodeBlock
-            title="Basic Styled Component"
-            description="Creating a styled button with gradient background and hover effects"
-            language="typescript"
+            title='Basic Styled Component'
+            description='Creating a styled button with gradient background and hover effects'
+            language='typescript'
             code={`const StyledButton = styled(Button)(({ theme }) => ({
   background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
   border: 0,
@@ -387,9 +471,9 @@ const StyledComponents: React.FC = () => {
           />
 
           <CodeBlock
-            title="Animated Keyframes"
-            description="Defining custom animations using keyframes"
-            language="typescript"
+            title='Animated Keyframes'
+            description='Defining custom animations using keyframes'
+            language='typescript'
             code={`const fadeIn = keyframes\`
   from {
     opacity: 0;
@@ -412,9 +496,9 @@ const AnimatedCard = styled(Card)(({ theme }) => ({
           />
 
           <CodeBlock
-            title="Conditional Styling"
-            description="Applying styles based on props or state"
-            language="typescript"
+            title='Conditional Styling'
+            description='Applying styles based on props or state'
+            language='typescript'
             code={`const DynamicCard = styled(Card)<{ $isActive?: boolean }>(
   ({ theme, $isActive }) => ({
     transition: 'all 0.3s ease',
@@ -430,9 +514,9 @@ const AnimatedCard = styled(Card)(({ theme }) => ({
           />
 
           <CodeBlock
-            title="Responsive Design"
-            description="Using theme breakpoints for responsive styling"
-            language="typescript"
+            title='Responsive Design'
+            description='Using theme breakpoints for responsive styling'
+            language='typescript'
             code={`const ResponsiveBox = styled(Box)(({ theme }) => ({
   padding: theme.spacing(2),
   [theme.breakpoints.up('sm')]: {
@@ -445,9 +529,9 @@ const AnimatedCard = styled(Card)(({ theme }) => ({
           />
 
           <CodeBlock
-            title="Glass Morphism Effect"
-            description="Creating modern glass-like appearance"
-            language="typescript"
+            title='Glass Morphism Effect'
+            description='Creating modern glass-like appearance'
+            language='typescript'
             code={`const GlassCard = styled(Card)(({ theme }) => ({
   background: 'rgba(255, 255, 255, 0.1)',
   backdropFilter: 'blur(10px)',
@@ -458,9 +542,9 @@ const AnimatedCard = styled(Card)(({ theme }) => ({
           />
 
           <CodeBlock
-            title="CSS-in-JS with css helper"
-            description="Using the css helper for complex styles"
-            language="typescript"
+            title='CSS-in-JS with css helper'
+            description='Using the css helper for complex styles'
+            language='typescript'
             code={`import { css } from '@mui/material/styles'
 
 const cssExample = css\`
@@ -484,9 +568,9 @@ const cssExample = css\`
           />
 
           <CodeBlock
-            title="Custom Theme"
-            description="Creating and using custom themes"
-            language="typescript"
+            title='Custom Theme'
+            description='Creating and using custom themes'
+            language='typescript'
             code={`import { createTheme, ThemeProvider } from '@mui/material/styles'
 
 const customTheme = createTheme({
@@ -515,7 +599,5 @@ const customTheme = createTheme({
         </Stack>
       )}
     </Box>
-  )
-}
-
-export default StyledComponents 
+  );
+};

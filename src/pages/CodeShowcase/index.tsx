@@ -1,22 +1,15 @@
-import React from 'react'
-import {
-  Box,
-  Typography,
-  Grid,
-  Paper,
-  Chip,
-  Divider,
-} from '@mui/material'
-import CodeBlock from '../components/CodeBlock'
+import React from 'react';
+import { Box, Typography, Grid, Paper, Chip, Divider } from '@mui/material';
+import CodeBlock from '../../components/CodeBlock';
 
 interface CodeExample {
-  title: string
-  description: string
-  language: string
-  code: string
+  title: string;
+  description: string;
+  language: string;
+  code: string;
 }
 
-const CodeShowcase: React.FC = () => {
+export const CodeShowcase: React.FC = () => {
   const codeExamples: CodeExample[] = [
     {
       title: 'React Component Example',
@@ -313,49 +306,63 @@ DELETE FROM users
 WHERE is_active = FALSE 
 AND created_at < CURRENT_DATE - INTERVAL '1 year';`,
     },
-  ]
+  ];
 
   return (
     <Box>
-      <Typography variant="h3" component="h1" sx={{ mb: 2, fontWeight: 'bold' }}>
+      <Typography
+        variant='h3'
+        component='h1'
+        sx={{ mb: 2, fontWeight: 'bold' }}
+      >
         Code Showcase
       </Typography>
-      <Typography variant="h6" color="text.secondary" sx={{ mb: 4 }}>
+      <Typography
+        variant='h6'
+        color='text.secondary'
+        sx={{ mb: 4 }}
+      >
         Explore and copy beautiful code examples in various programming languages
       </Typography>
 
-      <Grid container spacing={4}>
+      <Grid
+        container
+        spacing={4}
+      >
         {codeExamples.map((example, index) => (
-          <Grid item xs={12} key={index}>
+          <Grid
+            item
+            xs={12}
+            key={index}
+          >
             <Paper sx={{ p: 3, borderRadius: 3 }}>
               <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
-                <Chip 
-                  label={example.language.toUpperCase()} 
-                  color="primary" 
-                  size="small"
+                <Chip
+                  label={example.language.toUpperCase()}
+                  color='primary'
+                  size='small'
                   sx={{ mr: 2 }}
                 />
-                <Typography variant="body2" color="text.secondary">
+                <Typography
+                  variant='body2'
+                  color='text.secondary'
+                >
                   Click the copy button to copy the code
                 </Typography>
               </Box>
-              
+
               <CodeBlock
                 title={example.title}
                 description={example.description}
                 code={example.code}
                 language={example.language}
               />
-              
-              {index < codeExamples.length - 1 && (
-                <Divider sx={{ mt: 3 }} />
-              )}
+
+              {index < codeExamples.length - 1 && <Divider sx={{ mt: 3 }} />}
             </Paper>
           </Grid>
         ))}
       </Grid>
     </Box>
-  )
-}
-
-export default CodeShowcase 
+  );
+};
