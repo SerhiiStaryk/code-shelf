@@ -18,6 +18,7 @@ interface CodeBlockProps {
   title?: string
   description?: string
   showLineNumbers?: boolean
+  source?: string
 }
 
 const CodeBlock: React.FC<CodeBlockProps> = ({ 
@@ -25,7 +26,8 @@ const CodeBlock: React.FC<CodeBlockProps> = ({
   language = 'javascript', 
   title, 
   description,
-  showLineNumbers = true 
+  showLineNumbers = true,
+  source
 }) => {
   const [copied, setCopied] = useState(false)
   const [showSnackbar, setShowSnackbar] = useState(false)
@@ -116,6 +118,42 @@ const CodeBlock: React.FC<CodeBlockProps> = ({
           {code}
         </SyntaxHighlighter>
       </Paper>
+
+      {source && (
+        <Box
+          sx={{
+            mt: 1,
+            p: 1.5,
+            backgroundColor: 'grey.50',
+            borderRadius: 1,
+            border: '1px solid',
+            borderColor: 'grey.200',
+          }}
+        >
+          <Typography
+            variant="caption"
+            color="text.secondary"
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: 0.5,
+              fontWeight: 500,
+            }}
+          >
+            📚 Джерело:
+          </Typography>
+          <Typography
+            variant="body2"
+            color="text.primary"
+            sx={{
+              mt: 0.5,
+              fontStyle: 'italic',
+            }}
+          >
+            {source}
+          </Typography>
+        </Box>
+      )}
 
       <Snackbar
         open={showSnackbar}

@@ -7,6 +7,7 @@ interface CodeExample {
   description: string;
   language: string;
   code: string;
+  source?: string;
 }
 
 export const CodeShowcase: React.FC = () => {
@@ -52,6 +53,7 @@ const Counter = () => {
 };
 
 export default Counter;`,
+      source: 'React Documentation - Hooks and State Management',
     },
     {
       title: 'TypeScript Interface',
@@ -123,6 +125,7 @@ function isUser(obj: any): obj is User {
          typeof obj.name === 'string' &&
          typeof obj.email === 'string';
 }`,
+      source: 'TypeScript Handbook - Advanced Types and Interfaces',
     },
     {
       title: 'JavaScript Array Methods',
@@ -150,6 +153,7 @@ console.log('First > 5:', firstGreaterThan5); // 6
 // Check if all numbers are positive
 const allPositive = numbers.every(num => num > 0);
 console.log('All positive:', allPositive); // true`,
+      source: 'MDN Web Docs - JavaScript Array Methods',
     },
     {
       title: 'CSS Grid Layout',
@@ -192,6 +196,7 @@ console.log('All positive:', allPositive); // true`,
     grid-template-columns: repeat(4, 1fr);
   }
 }`,
+      source: 'CSS-Tricks - Complete Guide to CSS Grid',
     },
     {
       title: 'Python Data Processing',
@@ -234,6 +239,7 @@ df['salary_category'] = pd.cut(df['salary'],
 
 print("\\nSalary Categories:")
 print(df[['name', 'salary', 'salary_category']])`,
+      source: 'Pandas Documentation - Data Manipulation Guide',
     },
     {
       title: 'SQL Database Queries',
@@ -305,6 +311,7 @@ WHERE id = 1;
 DELETE FROM users 
 WHERE is_active = FALSE 
 AND created_at < CURRENT_DATE - INTERVAL '1 year';`,
+      source: 'PostgreSQL Documentation - SQL Tutorial',
     },
   ];
 
@@ -356,6 +363,7 @@ AND created_at < CURRENT_DATE - INTERVAL '1 year';`,
                 description={example.description}
                 code={example.code}
                 language={example.language}
+                source={example.source}
               />
 
               {index < codeExamples.length - 1 && <Divider sx={{ mt: 3 }} />}
