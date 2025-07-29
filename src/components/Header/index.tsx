@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { Link as RouterLink, useLocation } from 'react-router-dom'
+import React, { useState } from 'react';
+import { Link as RouterLink, useLocation } from 'react-router-dom';
 import {
   AppBar,
   Toolbar,
@@ -16,7 +16,7 @@ import {
   useMediaQuery,
   Divider,
   Chip,
-} from '@mui/material'
+} from '@mui/material';
 import {
   Code,
   Home,
@@ -27,86 +27,86 @@ import {
   Menu,
   Close,
   AutoAwesome,
-} from '@mui/icons-material'
+} from '@mui/icons-material';
 
 interface NavItem {
-  path: string
-  label: string
-  icon: React.ReactElement
-  description?: string
+  path: string;
+  label: string;
+  icon: React.ReactElement;
+  description?: string;
 }
 
 const Header: React.FC = () => {
-  const location = useLocation()
-  const theme = useTheme()
-  const isMobile = useMediaQuery(theme.breakpoints.down('md'))
-  const [mobileOpen, setMobileOpen] = useState(false)
+  const location = useLocation();
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   const navItems: NavItem[] = [
-    { 
-      path: '/', 
-      label: 'Home', 
+    {
+      path: '/',
+      label: 'Home',
       icon: <Home />,
-      description: 'Welcome to Code Showcase'
+      description: 'Welcome to Code Showcase',
     },
-    { 
-      path: '/showcase', 
-      label: 'Code Showcase', 
+    {
+      path: '/showcase',
+      label: 'Code Showcase',
       icon: <Code />,
-      description: 'Share and display code snippets'
+      description: 'Share and display code snippets',
     },
-    { 
-      path: '/examples', 
-      label: 'Examples', 
+    {
+      path: '/examples',
+      label: 'Examples',
       icon: <Lightbulb />,
-      description: 'Interactive code examples'
+      description: 'Interactive code examples',
     },
-    { 
-      path: '/styled-components', 
-      label: 'Styled Components', 
+    {
+      path: '/styled-components',
+      label: 'Styled Components',
       icon: <Palette />,
-      description: 'Material-UI styling patterns'
+      description: 'Material-UI styling patterns',
     },
-    { 
-      path: '/css-tips', 
-      label: 'CSS Tips', 
+    {
+      path: '/css-tips',
+      label: 'CSS Tips',
       icon: <Style />,
-      description: 'CSS techniques and best practices'
+      description: 'CSS techniques and best practices',
     },
-    { 
-      path: '/ts-tips', 
-      label: 'TypeScript Tips', 
+    {
+      path: '/ts-tips',
+      label: 'TypeScript Tips',
       icon: <IntegrationInstructions />,
-      description: 'TypeScript patterns and tips'
+      description: 'TypeScript patterns and tips',
     },
-    { 
-      path: '/design-system', 
-      label: 'Design System', 
+    {
+      path: '/design-system',
+      label: 'Design System',
       icon: <AutoAwesome />,
-      description: 'Component library and design patterns'
+      description: 'Component library and design patterns',
     },
-  ]
+  ];
 
   const handleDrawerToggle = () => {
-    setMobileOpen(!mobileOpen)
-  }
+    setMobileOpen(!mobileOpen);
+  };
 
   const handleNavClick = () => {
     if (isMobile) {
-      setMobileOpen(false)
+      setMobileOpen(false);
     }
-  }
+  };
 
-  const isActive = (path: string) => location.pathname === path
+  const isActive = (path: string) => location.pathname === path;
 
   const renderDesktopMenu = () => (
     <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
-      {navItems.map((item) => (
+      {navItems.map(item => (
         <Button
           key={item.path}
           component={RouterLink}
           to={item.path}
-          color="inherit"
+          color='inherit'
           startIcon={item.icon}
           sx={{
             position: 'relative',
@@ -119,17 +119,19 @@ const Header: React.FC = () => {
               backgroundColor: 'rgba(255, 255, 255, 0.1)',
               transform: 'translateY(-1px)',
             },
-            '&::after': isActive(item.path) ? {
-              content: '""',
-              position: 'absolute',
-              bottom: 0,
-              left: '50%',
-              transform: 'translateX(-50%)',
-              width: '80%',
-              height: 2,
-              backgroundColor: 'white',
-              borderRadius: 1,
-            } : {},
+            '&::after': isActive(item.path)
+              ? {
+                  content: '""',
+                  position: 'absolute',
+                  bottom: 0,
+                  left: '50%',
+                  transform: 'translateX(-50%)',
+                  width: '80%',
+                  height: 2,
+                  backgroundColor: 'white',
+                  borderRadius: 1,
+                }
+              : {},
             backgroundColor: isActive(item.path) ? 'rgba(255, 255, 255, 0.1)' : 'transparent',
           }}
         >
@@ -137,12 +139,12 @@ const Header: React.FC = () => {
         </Button>
       ))}
     </Box>
-  )
+  );
 
   const renderMobileMenu = () => (
     <Drawer
-      variant="temporary"
-      anchor="right"
+      variant='temporary'
+      anchor='right'
       open={mobileOpen}
       onClose={handleDrawerToggle}
       ModalProps={{
@@ -150,8 +152,8 @@ const Header: React.FC = () => {
       }}
       sx={{
         display: { xs: 'block', md: 'none' },
-        '& .MuiDrawer-paper': { 
-          boxSizing: 'border-box', 
+        '& .MuiDrawer-paper': {
+          boxSizing: 'border-box',
           width: 280,
           backgroundColor: 'background.paper',
           color: 'text.primary',
@@ -159,24 +161,31 @@ const Header: React.FC = () => {
       }}
     >
       <Box sx={{ p: 2, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-        <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
-          <Code sx={{ mr: 1, verticalAlign: 'middle' }} />
+        <Typography
+          variant='h6'
+          sx={{ fontWeight: 'bold' }}
+        >
+          <img
+            src='/logo.svg'
+            alt='logo'
+            style={{ height: 50, verticalAlign: 'middle', marginRight: 8 }}
+          />
           Menu
         </Typography>
         <IconButton
-          color="inherit"
-          aria-label="close menu"
+          color='inherit'
+          aria-label='close menu'
           onClick={handleDrawerToggle}
-          edge="end"
+          edge='end'
         >
           <Close />
         </IconButton>
       </Box>
-      
+
       <Divider />
-      
+
       <List sx={{ pt: 1 }}>
-        {navItems.map((item) => (
+        {navItems.map(item => (
           <ListItem
             key={item.path}
             component={RouterLink}
@@ -195,31 +204,39 @@ const Header: React.FC = () => {
               borderColor: 'primary.main',
             }}
           >
-            <ListItemIcon sx={{ 
-              color: isActive(item.path) ? 'primary.main' : 'inherit',
-              minWidth: 40 
-            }}>
+            <ListItemIcon
+              sx={{
+                color: isActive(item.path) ? 'primary.main' : 'inherit',
+                minWidth: 40,
+              }}
+            >
               {item.icon}
             </ListItemIcon>
             <ListItemText
               primary={
                 <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                  <Typography variant="body1" sx={{ fontWeight: isActive(item.path) ? 600 : 400 }}>
+                  <Typography
+                    variant='body1'
+                    sx={{ fontWeight: isActive(item.path) ? 600 : 400 }}
+                  >
                     {item.label}
                   </Typography>
                   {isActive(item.path) && (
-                    <Chip 
-                      label="Active" 
-                      size="small" 
-                      color="primary" 
-                      variant="outlined"
+                    <Chip
+                      label='Active'
+                      size='small'
+                      color='primary'
+                      variant='outlined'
                       sx={{ height: 20, fontSize: '0.7rem' }}
                     />
                   )}
                 </Box>
               }
               secondary={
-                <Typography variant="caption" color="text.secondary">
+                <Typography
+                  variant='caption'
+                  color='text.secondary'
+                >
                   {item.description}
                 </Typography>
               }
@@ -227,52 +244,70 @@ const Header: React.FC = () => {
           </ListItem>
         ))}
       </List>
-      
+
       <Box sx={{ p: 3, mt: 'auto' }}>
-        <Typography variant="caption" color="text.secondary" align="center" display="block">
+        <Typography
+          variant='caption'
+          color='text.secondary'
+          align='center'
+          display='block'
+        >
           Code Showcase App
         </Typography>
-        <Typography variant="caption" color="text.secondary" align="center" display="block">
+        <Typography
+          variant='caption'
+          color='text.secondary'
+          align='center'
+          display='block'
+        >
           Built with React & Material-UI
         </Typography>
       </Box>
     </Drawer>
-  )
+  );
 
   return (
-    <AppBar position="static" elevation={2}>
+    <AppBar
+      position='static'
+      elevation={2}
+    >
       <Toolbar sx={{ justifyContent: 'space-between' }}>
         <Typography
-          variant="h6"
-          sx={{ 
+          variant='h6'
+          sx={{
             fontWeight: 'bold',
             display: 'flex',
             alignItems: 'center',
             cursor: 'pointer',
           }}
           component={RouterLink}
-          to="/"
+          to='/'
         >
-          <Code sx={{ mr: 1, verticalAlign: 'middle' }} />
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-            Code Showcase
+            <img
+              src='/main_logo_white.svg' // Use public path
+              alt='logo'
+              style={{ height: 60, verticalAlign: 'middle' }}
+            />
           </Box>
           <Box sx={{ display: { xs: 'block', sm: 'none' } }}>
-            CS
+            <img
+              src='/logo_white.svg'
+              alt='logo'
+              style={{ height: 60, verticalAlign: 'middle' }}
+            />
           </Box>
         </Typography>
-        
+
         {/* Desktop Menu */}
-        <Box sx={{ display: { xs: 'none', md: 'block' } }}>
-          {renderDesktopMenu()}
-        </Box>
-        
+        <Box sx={{ display: { xs: 'none', md: 'block' } }}>{renderDesktopMenu()}</Box>
+
         {/* Mobile Menu Button */}
         <Box sx={{ display: { xs: 'block', md: 'none' } }}>
           <IconButton
-            color="inherit"
-            aria-label="open menu"
-            edge="end"
+            color='inherit'
+            aria-label='open menu'
+            edge='end'
             onClick={handleDrawerToggle}
             sx={{
               p: 1,
@@ -288,11 +323,11 @@ const Header: React.FC = () => {
           </IconButton>
         </Box>
       </Toolbar>
-      
+
       {/* Mobile Menu Drawer */}
       {renderMobileMenu()}
     </AppBar>
-  )
-}
+  );
+};
 
-export default Header 
+export default Header;
