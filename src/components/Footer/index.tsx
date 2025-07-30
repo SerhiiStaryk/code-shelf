@@ -1,30 +1,16 @@
-import React, { useState } from 'react';
+import { type FC, type ReactElement } from 'react';
 import { Link as RouterLink, useLocation } from 'react-router-dom';
-import {
-  AppBar,
-  Toolbar,
-  Typography,
-  Button,
-  Box,
-} from '@mui/material';
-import {
-  Code,
-  Home,
-  Lightbulb,
-  Palette,
-  Style,
-  IntegrationInstructions,
-  AutoAwesome,
-} from '@mui/icons-material';
+import { AppBar, Toolbar, Typography, Button, Box } from '@mui/material';
+import { Code, Home, Lightbulb, Palette, Style, IntegrationInstructions, AutoAwesome } from '@mui/icons-material';
 
 interface NavItem {
   path: string;
   label: string;
-  icon: React.ReactElement;
+  icon: ReactElement;
   description?: string;
 }
 
-const Footer: React.FC = () => {
+const Footer: FC = () => {
   const location = useLocation();
 
   const navItems: NavItem[] = [
@@ -72,18 +58,18 @@ const Footer: React.FC = () => {
     },
   ];
 
-
-
   const isActive = (path: string) => location.pathname === path;
 
   const renderDesktopMenu = () => (
-    <Box sx={{ 
-      display: 'grid', 
-      gridTemplateColumns: { xs: 'repeat(auto-fit, minmax(150px, 1fr))', md: 'repeat(auto-fit, minmax(200px, 1fr))' },
-      gap: 2,
-      width: '100%',
-      maxWidth: 800
-    }}>
+    <Box
+      sx={{
+        display: 'grid',
+        gridTemplateColumns: { xs: 'repeat(auto-fit, minmax(150px, 1fr))', md: 'repeat(auto-fit, minmax(200px, 1fr))' },
+        gap: 2,
+        width: '100%',
+        maxWidth: 800,
+      }}
+    >
       {navItems.map(item => (
         <Button
           key={item.path}
@@ -121,11 +107,17 @@ const Footer: React.FC = () => {
           }}
         >
           <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 0.5 }}>
-            <Typography variant="body2" sx={{ fontWeight: 500 }}>
+            <Typography
+              variant='body2'
+              sx={{ fontWeight: 500 }}
+            >
               {item.label}
             </Typography>
             {item.description && (
-              <Typography variant="caption" sx={{ opacity: 0.8, lineHeight: 1.2, display: { xs: 'none', md: 'block' } }}>
+              <Typography
+                variant='caption'
+                sx={{ opacity: 0.8, lineHeight: 1.2, display: { xs: 'none', md: 'block' } }}
+              >
                 {item.description}
               </Typography>
             )}
@@ -134,8 +126,6 @@ const Footer: React.FC = () => {
       ))}
     </Box>
   );
-
-
 
   return (
     <AppBar
@@ -146,12 +136,14 @@ const Footer: React.FC = () => {
         backgroundColor: 'primary.main',
       }}
     >
-      <Toolbar sx={{ 
-        flexDirection: { xs: 'column', md: 'row' },
-        alignItems: { xs: 'stretch', md: 'center' },
-        gap: 3,
-        py: 3
-      }}>
+      <Toolbar
+        sx={{
+          flexDirection: { xs: 'column', md: 'row' },
+          alignItems: { xs: 'stretch', md: 'center' },
+          gap: 3,
+          py: 3,
+        }}
+      >
         <Typography
           variant='h6'
           sx={{
@@ -159,7 +151,7 @@ const Footer: React.FC = () => {
             display: 'flex',
             alignItems: 'center',
             cursor: 'pointer',
-            alignSelf: { xs: 'center', md: 'flex-start' }
+            alignSelf: { xs: 'center', md: 'flex-start' },
           }}
           component={RouterLink}
           to='/'
@@ -181,20 +173,18 @@ const Footer: React.FC = () => {
         </Typography>
 
         {/* Menu */}
-        <Box sx={{ 
-          display: 'flex',
-          flex: 1,
-          justifyContent: 'center'
-        }}>
+        <Box
+          sx={{
+            display: 'flex',
+            flex: 1,
+            justifyContent: 'center',
+          }}
+        >
           {renderDesktopMenu()}
         </Box>
-
-
       </Toolbar>
-
-
     </AppBar>
   );
 };
 
-export default Footer; 
+export default Footer;

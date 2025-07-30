@@ -1,61 +1,60 @@
-import React, { useState } from 'react'
-import {
-  Box,
-  Paper,
-  Typography,
-  IconButton,
-  Tooltip,
-  Snackbar,
-  Alert,
-} from '@mui/material'
-import { ContentCopy, Check } from '@mui/icons-material'
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
-import { tomorrow } from 'react-syntax-highlighter/dist/esm/styles/prism'
+import React, { useState } from 'react';
+import { Box, Paper, Typography, IconButton, Tooltip, Snackbar, Alert } from '@mui/material';
+import { ContentCopy, Check } from '@mui/icons-material';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { tomorrow } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 interface CodeBlockProps {
-  code: string
-  language?: string
-  title?: string
-  description?: string
-  showLineNumbers?: boolean
-  source?: string
+  code: string;
+  language?: string;
+  title?: string;
+  description?: string;
+  showLineNumbers?: boolean;
+  source?: string;
 }
 
-const CodeBlock: React.FC<CodeBlockProps> = ({ 
-  code, 
-  language = 'javascript', 
-  title, 
+const CodeBlock: React.FC<CodeBlockProps> = ({
+  code,
+  language = 'javascript',
+  title,
   description,
   showLineNumbers = true,
-  source
+  source,
 }) => {
-  const [copied, setCopied] = useState(false)
-  const [showSnackbar, setShowSnackbar] = useState(false)
+  const [copied, setCopied] = useState(false);
+  const [showSnackbar, setShowSnackbar] = useState(false);
 
   const handleCopy = async (): Promise<void> => {
     try {
-      await navigator.clipboard.writeText(code)
-      setCopied(true)
-      setShowSnackbar(true)
+      await navigator.clipboard.writeText(code);
+      setCopied(true);
+      setShowSnackbar(true);
       setTimeout(() => {
-        setCopied(false)
-        setShowSnackbar(false)
-      }, 2000)
+        setCopied(false);
+        setShowSnackbar(false);
+      }, 2000);
     } catch (err) {
-      console.error('Failed to copy code:', err)
+      console.error('Failed to copy code:', err);
     }
-  }
+  };
 
   return (
     <Box sx={{ mb: 3 }}>
       {title && (
-        <Typography variant="h6" sx={{ mb: 1, fontWeight: 600 }}>
+        <Typography
+          variant='h6'
+          sx={{ mb: 1, fontWeight: 600 }}
+        >
           {title}
         </Typography>
       )}
-      
+
       {description && (
-        <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
+        <Typography
+          variant='body2'
+          color='text.secondary'
+          sx={{ mb: 2 }}
+        >
           {description}
         </Typography>
       )}
@@ -71,7 +70,7 @@ const CodeBlock: React.FC<CodeBlockProps> = ({
         }}
       >
         <Box
-          className="copy-button"
+          className='copy-button'
           sx={{
             position: 'absolute',
             top: 8,
@@ -85,7 +84,7 @@ const CodeBlock: React.FC<CodeBlockProps> = ({
         >
           <Tooltip title={copied ? 'Copied!' : 'Copy code'}>
             <IconButton
-              size="small"
+              size='small'
               onClick={handleCopy}
               sx={{
                 color: copied ? 'success.main' : 'text.secondary',
@@ -94,7 +93,7 @@ const CodeBlock: React.FC<CodeBlockProps> = ({
                 },
               }}
             >
-              {copied ? <Check fontSize="small" /> : <ContentCopy fontSize="small" />}
+              {copied ? <Check fontSize='small' /> : <ContentCopy fontSize='small' />}
             </IconButton>
           </Tooltip>
         </Box>
@@ -131,8 +130,8 @@ const CodeBlock: React.FC<CodeBlockProps> = ({
           }}
         >
           <Typography
-            variant="caption"
-            color="text.secondary"
+            variant='caption'
+            color='text.secondary'
             sx={{
               display: 'flex',
               alignItems: 'center',
@@ -143,8 +142,8 @@ const CodeBlock: React.FC<CodeBlockProps> = ({
             📚 Джерело:
           </Typography>
           <Typography
-            variant="body2"
-            color="text.primary"
+            variant='body2'
+            color='text.primary'
             sx={{
               mt: 0.5,
               fontStyle: 'italic',
@@ -161,16 +160,16 @@ const CodeBlock: React.FC<CodeBlockProps> = ({
         onClose={() => setShowSnackbar(false)}
         anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
       >
-        <Alert 
-          onClose={() => setShowSnackbar(false)} 
-          severity="success" 
+        <Alert
+          onClose={() => setShowSnackbar(false)}
+          severity='success'
           sx={{ width: '100%' }}
         >
           Code copied to clipboard!
         </Alert>
       </Snackbar>
     </Box>
-  )
-}
+  );
+};
 
-export default CodeBlock 
+export default CodeBlock;

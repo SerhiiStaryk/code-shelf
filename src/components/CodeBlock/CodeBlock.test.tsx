@@ -127,7 +127,6 @@ describe('CodeBlock', () => {
 
   describe('Copy functionality', () => {
     it('shows copy button on hover', async () => {
-      const user = userEvent.setup();
       render(<CodeBlock {...defaultProps} />);
 
       const paper = screen.getByRole('button').closest('[class*="MuiPaper"]');

@@ -428,7 +428,7 @@ export const TSTips: React.FC = () => {
         scrollButtons='auto'
         sx={{ mb: 4 }}
       >
-        {categories.map((category, index) => (
+        {categories.map(category => (
           <Tab
             key={category.name}
             label={category.name}
