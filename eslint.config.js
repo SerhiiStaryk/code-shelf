@@ -28,7 +28,6 @@ export default tseslint.config([
       "semi": ["error", "always"],
       "quotes": ["error", "single"],
       "no-console": "warn",
-      "no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
       "no-undef": "error",
       "no-extra-semi": "error",
       "max-len": ["error", { "code": 120 }],

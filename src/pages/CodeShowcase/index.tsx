@@ -338,8 +338,7 @@ AND created_at < CURRENT_DATE - INTERVAL '1 year';`,
       >
         {codeExamples.map((example, index) => (
           <Grid
-            item
-            xs={12}
+            size={{ xs: 12 }}
             key={index}
           >
             <Paper sx={{ p: 3, borderRadius: 3 }}>

@@ -1,28 +1,26 @@
 import { Box, Container } from '@mui/material';
-import Footer from './components/Footer';
+import { Footer } from './components/Footer';
 import { AppRoutes } from './router';
-import Header from './components/Header';
+import { Header } from './components/Header';
 
-function App() {
-  return (
-    <Box
-      sx={{
-        minHeight: '100vh',
-        backgroundColor: 'background.default',
-        display: 'flex',
-        flexDirection: 'column',
-      }}
+const App = () => (
+  <Box
+    sx={{
+      minHeight: '100vh',
+      backgroundColor: 'background.default',
+      display: 'flex',
+      flexDirection: 'column',
+    }}
+  >
+    <Header />
+    <Container
+      maxWidth='lg'
+      sx={{ py: 4, flex: 1 }}
     >
-      <Header />
-      <Container
-        maxWidth='lg'
-        sx={{ py: 4, flex: 1 }}
-      >
-        <AppRoutes />
-      </Container>
-      <Footer />
-    </Box>
-  );
-}
+      <AppRoutes />
+    </Container>
+    <Footer />
+  </Box>
+);
 
 export default App;

@@ -185,11 +185,13 @@ const Timer = () => {
   // Timer effect
   useEffect(() => {
     let interval: NodeJS.Timeout | null = null;
+
     if (isRunning) {
       interval = setInterval(() => {
         setCounter(prev => prev + 1);
       }, 1000);
     }
+
     return () => {
       if (interval) clearInterval(interval);
     };
@@ -224,10 +226,7 @@ const Timer = () => {
         spacing={4}
       >
         {/* Counter Example */}
-        <Grid
-          xs={12}
-          md={6}
-        >
+        <Grid size={{ xs: 12, md: 6 }}>
           <Paper sx={{ p: 3, borderRadius: 3, height: '100%' }}>
             <Typography
               variant='h5'
@@ -278,10 +277,7 @@ const Timer = () => {
         </Grid>
 
         {/* Form Example */}
-        <Grid
-          xs={12}
-          md={6}
-        >
+        <Grid size={{ xs: 12, md: 6 }}>
           <Paper sx={{ p: 3, borderRadius: 3, height: '100%' }}>
             <Typography
               variant='h5'
@@ -330,7 +326,7 @@ const Timer = () => {
         </Grid>
 
         {/* Timer Example */}
-        <Grid xs={12}>
+        <Grid size={{ xs: 12 }}>
           <Paper sx={{ p: 3, borderRadius: 3 }}>
             <Typography
               variant='h5'
