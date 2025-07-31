@@ -1,7 +1,6 @@
-import { Box, Container } from '@mui/material';
-import { Footer } from './components/Footer';
+import { Box } from '@mui/material';
 import { AppRoutes } from './router';
-import { Header } from './components/Header';
+import { Layout } from './components/Layout';
 
 const App = () => (
   <Box
@@ -12,14 +11,9 @@ const App = () => (
       flexDirection: 'column',
     }}
   >
-    <Header />
-    <Container
-      maxWidth='lg'
-      sx={{ py: 4, flex: 1 }}
-    >
+    <Layout>
       <AppRoutes />
-    </Container>
-    <Footer />
+    </Layout>
   </Box>
 );
 

@@ -1,5 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
-import { Home, CodeShowcase, Examples, StyledComponents, CSSTips, TSTips, DesignSystem } from '../pages';
+import { Home, CodeShowcase, Examples, CSSTips, TSTips, DesignSystem } from '../pages';
+import { PATH_TS_TIPS, PATH_CSS_TIPS, PATH_EXAMPLES, PATH_SHOWCASE, PATH_DESIGN_SYSTEM } from './path';
 
 export const AppRoutes = () => (
   <Routes>
@@ -8,27 +9,24 @@ export const AppRoutes = () => (
       element={<Home />}
     />
     <Route
-      path='/showcase'
+      path={PATH_SHOWCASE}
       element={<CodeShowcase />}
     />
     <Route
-      path='/examples'
+      path={PATH_EXAMPLES}
       element={<Examples />}
     />
+
     <Route
-      path='/styled-components'
-      element={<StyledComponents />}
-    />
-    <Route
-      path='/css-tips'
+      path={PATH_CSS_TIPS}
       element={<CSSTips />}
     />
     <Route
-      path='/ts-tips'
+      path={PATH_TS_TIPS}
       element={<TSTips />}
     />
     <Route
-      path='/design-system'
+      path={PATH_DESIGN_SYSTEM}
       element={<DesignSystem />}
     />
   </Routes>

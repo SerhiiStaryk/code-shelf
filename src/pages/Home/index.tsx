@@ -1,79 +1,11 @@
 import React from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import { Box, Typography, Card, CardContent, CardActions, Button, Paper } from '@mui/material';
-import {
-  Code,
-  Lightbulb,
-  Share,
-  Speed,
-  Palette,
-  Style,
-  IntegrationInstructions,
-  AutoAwesome,
-} from '@mui/icons-material';
-
-interface Feature {
-  icon: React.ReactElement;
-  title: string;
-  description: string;
-  path: string;
-}
+import { features } from '../../data/features';
 
 export const Home: React.FC = () => {
-  const features: Feature[] = [
-    {
-      icon: <Code sx={{ fontSize: 40, color: 'primary.main' }} />,
-      title: 'Code Showcase',
-      description: 'Share and display your code snippets with beautiful syntax highlighting and copy functionality.',
-      path: '/showcase',
-    },
-    {
-      icon: <Lightbulb sx={{ fontSize: 40, color: 'secondary.main' }} />,
-      title: 'Live Examples',
-      description: 'See your code in action with interactive examples and live previews.',
-      path: '/examples',
-    },
-    {
-      icon: <Palette sx={{ fontSize: 40, color: 'success.main' }} />,
-      title: 'Styled Components',
-      description: "Explore advanced styling techniques and patterns using Material-UI's styled API.",
-      path: '/styled-components',
-    },
-    {
-      icon: <Style sx={{ fontSize: 40, color: 'warning.main' }} />,
-      title: 'CSS Tips',
-      description: 'Learn essential CSS techniques and best practices for modern web development.',
-      path: '/css-tips',
-    },
-    {
-      icon: <IntegrationInstructions sx={{ fontSize: 40, color: 'info.main' }} />,
-      title: 'TypeScript Tips',
-      description: 'Master TypeScript with advanced patterns, type safety, and best practices.',
-      path: '/ts-tips',
-    },
-    {
-      icon: <AutoAwesome sx={{ fontSize: 40, color: 'error.main' }} />,
-      title: 'Design System',
-      description: 'Comprehensive component library and design patterns for consistent UI development.',
-      path: '/design-system',
-    },
-    {
-      icon: <Share sx={{ fontSize: 40, color: 'success.dark' }} />,
-      title: 'Easy Sharing',
-      description: 'Copy code with one click and share your examples with others.',
-      path: '/showcase',
-    },
-    {
-      icon: <Speed sx={{ fontSize: 40, color: 'warning.dark' }} />,
-      title: 'Fast & Modern',
-      description: 'Built with React and Material-UI for a smooth, modern experience.',
-      path: '/showcase',
-    },
-  ];
-
   return (
     <Box>
-      {/* Hero Section */}
       <Paper
         elevation={0}
         sx={{
@@ -133,7 +65,6 @@ export const Home: React.FC = () => {
         </Box>
       </Paper>
 
-      {/* Features Grid */}
       <Typography
         variant='h4'
         component='h2'
@@ -192,33 +123,6 @@ export const Home: React.FC = () => {
           </Card>
         ))}
       </Box>
-
-      {/* Quick Start Section */}
-      <Paper sx={{ p: 4, mt: 6, borderRadius: 3 }}>
-        <Typography
-          variant='h5'
-          component='h3'
-          sx={{ mb: 3, fontWeight: 600 }}
-        >
-          Quick Start
-        </Typography>
-        <Typography
-          variant='body1'
-          sx={{ mb: 3 }}
-        >
-          Ready to showcase your code? Head over to the Code Showcase page to see examples of how to display your code
-          snippets with beautiful syntax highlighting and copy functionality.
-        </Typography>
-        <Button
-          component={RouterLink}
-          to='/showcase'
-          variant='contained'
-          size='large'
-          startIcon={<Code />}
-        >
-          Get Started
-        </Button>
-      </Paper>
     </Box>
   );
 };

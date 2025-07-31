@@ -41,6 +41,10 @@ export const DesktopMenu = ({ isActive }: DesktopMenuProps) => {
                 }
               : {},
             backgroundColor: isActive(item.path) ? 'rgba(255, 255, 255, 0.1)' : 'transparent',
+            '@media (max-width:1200px)': {
+              fontSize: '0.5rem',
+              padding: 1,
+            },
           }}
         >
           {item.label}
