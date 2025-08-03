@@ -1,12 +1,4 @@
-import {
-  Code,
-  Share,
-  Speed,
-  Style,
-  Lightbulb,
-  AutoAwesome,
-  IntegrationInstructions,
-} from '@mui/icons-material';
+import { Code, Style, Lightbulb, AutoAwesome, IntegrationInstructions } from '@mui/icons-material';
 import type { Feature } from '../types/data';
 import { PATH_TS_TIPS, PATH_CSS_TIPS, PATH_EXAMPLES, PATH_SHOWCASE, PATH_DESIGN_SYSTEM } from '../router/path';
 
@@ -42,17 +34,5 @@ export const features: Feature[] = [
     title: 'Design System',
     description: 'Comprehensive component library and design patterns for consistent UI development.',
     path: PATH_DESIGN_SYSTEM,
-  },
-  {
-    icon: <Share sx={{ ...defaultIconStyle, color: 'success.dark' }} />,
-    title: 'Easy Sharing',
-    description: 'Copy code with one click and share your examples with others.',
-    path: PATH_SHOWCASE,
-  },
-  {
-    icon: <Speed sx={{ ...defaultIconStyle, color: 'warning.dark' }} />,
-    title: 'Fast & Modern',
-    description: 'Built with React and Material-UI for a smooth, modern experience.',
-    path: PATH_SHOWCASE,
   },
 ];

@@ -1,15 +1,17 @@
 import React from 'react';
 import { Link as RouterLink } from 'react-router-dom';
-import { Box, Typography, Card, CardContent, CardActions, Button, Paper } from '@mui/material';
+import { Box, Typography, Card, CardContent, CardActions, Button, Paper, useTheme } from '@mui/material';
 import { features } from '../../data/features';
 
 export const Home: React.FC = () => {
+  const theme = useTheme();
+
   return (
     <Box>
       <Paper
         elevation={0}
         sx={{
-          background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+          background: `linear-gradient(135deg, ${theme.palette.primary.main} 0%, ${theme.palette.secondary.main} 100%)`,
           color: 'white',
           p: 6,
           mb: 4,

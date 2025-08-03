@@ -49,9 +49,10 @@ export const MobileMenu = ({ isActive, setMobileOpen, mobileOpen, handleDrawerTo
         display: { xs: 'block', md: 'none' },
         '& .MuiDrawer-paper': {
           boxSizing: 'border-box',
-          width: 280,
+          width: 300,
           backgroundColor: 'background.paper',
           color: 'text.primary',
+          overflow: 'hidden',
         },
       }}
     >

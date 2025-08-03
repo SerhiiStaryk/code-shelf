@@ -1,28 +1,31 @@
 import React, { useState } from 'react';
 import { Box, Paper, Typography, IconButton, Tooltip, Snackbar, Alert } from '@mui/material';
 import { ContentCopy, Check } from '@mui/icons-material';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { tomorrow } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { tomorrow } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+import { hybrid } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
 
 interface CodeBlockProps {
   code: string;
-  language?: string;
   title?: string;
+  source?: string;
+  language?: string;
   description?: string;
   showLineNumbers?: boolean;
-  source?: string;
 }
 
 const CodeBlock: React.FC<CodeBlockProps> = ({
   code,
-  language = 'javascript',
   title,
+  source,
   description,
   showLineNumbers = true,
-  source,
+  language = 'javascript',
 }) => {
   const [copied, setCopied] = useState(false);
   const [showSnackbar, setShowSnackbar] = useState(false);
+
+  console.log('CodeBlock rendered with language:', language);
 
   const handleCopy = async (): Promise<void> => {
     try {
@@ -100,8 +103,9 @@ const CodeBlock: React.FC<CodeBlockProps> = ({
 
         <SyntaxHighlighter
           language={language}
-          style={tomorrow}
+          style={hybrid}
           showLineNumbers={showLineNumbers}
+          wrapLines={true}
           customStyle={{
             margin: 0,
             padding: '16px',
