@@ -16,6 +16,7 @@ import {
 import { navItems } from '../../constants/menu';
 import { Link as RouterLink } from 'react-router-dom';
 import { type Dispatch, type SetStateAction } from 'react';
+import logo from '../../assets/logo.svg';
 
 export type MobileMenuProps = {
   isActive: (path: string) => boolean;
@@ -60,7 +61,7 @@ export const MobileMenu = ({ isActive, setMobileOpen, mobileOpen, handleDrawerTo
           sx={{ fontWeight: 'bold' }}
         >
           <img
-            src='/logo.svg'
+            src={logo}
             alt='logo'
             style={{ height: 50, verticalAlign: 'middle', marginRight: 8 }}
           />

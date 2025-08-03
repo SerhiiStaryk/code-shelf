@@ -2,6 +2,8 @@ import { type FC } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import { Box, Container, Typography } from '@mui/material';
 import { FooterMenu } from '../FooterMenu';
+import mainLogoWhite from '../../assets/main_logo_white.svg';
+import logoWhite from '../../assets/logo_white.svg';
 
 export const Footer: FC = () => (
   <Box
@@ -35,14 +37,14 @@ export const Footer: FC = () => (
       >
         <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
           <img
-            src='/main_logo_white.svg'
             alt='logo'
+            src={mainLogoWhite}
             style={{ height: 60, verticalAlign: 'middle' }}
           />
         </Box>
         <Box sx={{ display: { xs: 'block', sm: 'none' } }}>
           <img
-            src='/logo_white.svg'
+            src={logoWhite}
             alt='logo'
             style={{ height: 60, verticalAlign: 'middle' }}
           />

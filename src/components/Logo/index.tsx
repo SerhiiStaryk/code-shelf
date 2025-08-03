@@ -1,7 +1,7 @@
 import { Box, Typography } from '@mui/material';
 import { Link as RouterLink } from 'react-router-dom';
-
-const baseUrl = import.meta.env.VITE_BASE_URL || '/';
+import mainLogoWhite from '../../assets/main_logo_white.svg';
+import logoWhite from '../../assets/logo_white.svg';
 
 export const Logo = () => (
   <Typography
@@ -18,14 +18,14 @@ export const Logo = () => (
     <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
       <img
         alt='logo'
-        src={`${baseUrl}main_logo_white.svg`}
+        src={mainLogoWhite}
         style={{ height: 60, verticalAlign: 'middle' }}
       />
     </Box>
     <Box sx={{ display: { xs: 'block', sm: 'none' } }}>
       <img
         alt='logo'
-        src={`${baseUrl}logo_white.svg`}
+        src={logoWhite}
         style={{ height: 60, verticalAlign: 'middle' }}
       />
     </Box>
