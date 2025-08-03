@@ -44,6 +44,6 @@ export const navItems: NavItem[] = [
     path: PATH_DESIGN_SYSTEM,
     label: 'Design System',
     icon: <AutoAwesome />,
-    description: 'Component library and design patterns',
+    description: 'Design patterns',
   },
 ];

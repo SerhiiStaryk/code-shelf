@@ -1,6 +1,5 @@
 import React from 'react';
-import { Box, Typography, Grid, Paper, Chip, Divider } from '@mui/material';
-import CodeBlock from '../../components/CodeBlock';
+import { Box, Typography, Grid } from '@mui/material';
 import { codeExamples } from '../../data/codeShowcase';
 import { CodeCard } from '../../components/CodeCard';
 
