@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Box, Paper, Typography, IconButton, Tooltip, Snackbar, Alert } from '@mui/material';
 import { ContentCopy, Check } from '@mui/icons-material';
 import SyntaxHighlighter from 'react-syntax-highlighter';
-import { tomorrow } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import { hybrid } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
 
 interface CodeBlockProps {
