@@ -5,20 +5,11 @@ import {
   Card,
   CardContent,
   Chip,
-  Paper,
   Tabs,
   Tab,
   Alert,
   Stack,
-  Accordion,
-  AccordionSummary,
-  AccordionDetails,
-  List,
-  ListItem,
-  ListItemText,
-  ListItemIcon,
 } from '@mui/material';
-import { ExpandMore, TrendingUp, CheckCircle, Info, Warning } from '@mui/icons-material';
 import CodeBlock from '../../components/CodeBlock';
 import { tips } from '../../data/cssTips';
 import { categories } from './constants';

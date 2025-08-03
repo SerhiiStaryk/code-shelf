@@ -47,6 +47,32 @@ npm run dev
 
 5. Open [http://localhost:5173](http://localhost:5173) to view it in the browser
 
+## 🚀 Deployment
+
+### GitHub Pages
+
+This project is configured for automatic deployment to GitHub Pages. The deployment happens automatically when you push to the `main` or `master` branch.
+
+#### Manual Deployment
+
+If you want to deploy manually:
+
+```bash
+npm run deploy
+```
+
+This will build the project and deploy it to the `gh-pages` branch.
+
+#### GitHub Pages Setup
+
+1. Go to your repository settings on GitHub
+2. Navigate to "Pages" in the sidebar
+3. Set the source to "Deploy from a branch"
+4. Select the `gh-pages` branch
+5. Save the settings
+
+Your site will be available at: `https://yourusername.github.io/code-shelf/`
+
 ## 📁 Project Structure
 
 ```

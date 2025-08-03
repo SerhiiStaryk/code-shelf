@@ -8,7 +8,7 @@ export const Timer = () => {
   const [counter, setCounter] = useState<number>(0);
 
   useEffect(() => {
-    let interval: number | null = null;
+    let interval: ReturnType<typeof setInterval> | null = null;
 
     if (isRunning) {
       interval = setInterval(() => {

@@ -3,7 +3,6 @@ import {
   Share,
   Speed,
   Style,
-  Palette,
   Lightbulb,
   AutoAwesome,
   IntegrationInstructions,
