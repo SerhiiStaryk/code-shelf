@@ -2,6 +2,7 @@
   "name": "code-shelf",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://serhiistaryk.github.io/code-shelf/",
   "type": "module",
   "scripts": {
     "dev": "vite",
