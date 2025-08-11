@@ -24,7 +24,6 @@ const CodeBlock: React.FC<CodeBlockProps> = ({
   const [copied, setCopied] = useState(false);
   const [showSnackbar, setShowSnackbar] = useState(false);
 
-  console.log('CodeBlock rendered with language:', language);
 
   const handleCopy = async (): Promise<void> => {
     try {
