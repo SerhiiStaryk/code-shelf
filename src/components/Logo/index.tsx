@@ -13,7 +13,7 @@ export const Logo = () => (
       alignItems: 'center',
     }}
     component={RouterLink}
-    to='/'
+    to='/code-shelf/'
   >
     <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
       <img
