@@ -3,30 +3,23 @@ import type { CodeExample } from '../types/data';
 
 export const codeExamples: CodeExample[] = [
   {
-    title: 'React Layout Component',
-    description:
-      'This Layout component provides a page structure with a Header at the top, a centered Container for main content, and a Footer at the bottom.',
-    language: 'tsx',
-    code: `import type { ReactNode } from 'react';
-import { Header } from '../Header';
-import { Container } from '@mui/material';
-import { Footer } from '../Footer';
+    title: 'Memoization',
+    description: 'Checks if a number is prime while caching results to speed up repeated calls.',
+    language: 'js',
+    code: `const isPrime = (num) => {
+  if(!isPrime.cache) { isPrime.cache = {};}
+  if(isPrime.cache[num] !== undefined) return isPrime.cache[num];
 
-export type LayoutProps = {
-  children: ReactNode;
-};
+  let prime = num !== 0 && num !== 1;
 
-export const Layout = ({ children }: LayoutProps) => (
-  <>
-    <Header />
-    <Container
-      maxWidth='lg'
-      sx={{ py: 4, flex: 1 }}
-    >
-      {children}
-    </Container>
-    <Footer />
-  </>
-);`,
+  for(let i = 2; i <= Math.sqrt(num); i++) {
+    if(num % i === 0) {
+      prime = false;
+      break;
+    }
+  }
+
+  return isPrime.cache[num] = prime;
+}`,
   },
 ];

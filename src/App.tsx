@@ -1,20 +1,14 @@
-import { Box } from '@mui/material';
-import { AppRoutes } from './router';
-import { Layout } from './components/Layout';
+import { CssBaseline, ThemeProvider } from '@mui/material';
+
+import { RouterProvider } from 'react-router-dom';
+import router from './router/router';
+import { theme } from './styles/theme';
 
 const App = () => (
-  <Box
-    sx={{
-      minHeight: '100vh',
-      backgroundColor: 'background.default',
-      display: 'flex',
-      flexDirection: 'column',
-    }}
-  >
-    <Layout>
-      <AppRoutes />
-    </Layout>
-  </Box>
+  <ThemeProvider theme={theme}>
+    <CssBaseline />
+    <RouterProvider router={router} />
+  </ThemeProvider>
 );
 
 export default App;

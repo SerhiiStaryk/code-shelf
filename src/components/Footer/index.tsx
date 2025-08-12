@@ -33,7 +33,7 @@ export const Footer: FC = () => (
           cursor: 'pointer',
         }}
         component={RouterLink}
-        to='/'
+        to='/code-shelf/'
       >
         <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
           <img

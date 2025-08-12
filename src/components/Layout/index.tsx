@@ -1,20 +1,25 @@
-import type { ReactNode } from 'react';
 import { Header } from '../Header';
-import { Container } from '@mui/material';
+import { Box, Container } from '@mui/material';
 import { Footer } from '../Footer';
+import { Outlet } from 'react-router-dom';
 
-export type LayoutProps = {
-  children: ReactNode;
-};
-
-export const Layout = ({ children }: LayoutProps) => (
+export const Layout = () => (
   <>
     <Header />
     <Container
       maxWidth='lg'
       sx={{ py: 4, flex: 1 }}
     >
-      {children}
+      <Box
+        sx={{
+          minHeight: '100vh',
+          backgroundColor: 'background.default',
+          display: 'flex',
+          flexDirection: 'column',
+        }}
+      >
+        <Outlet />
+      </Box>
     </Container>
     <Footer />
   </>
