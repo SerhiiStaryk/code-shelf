@@ -1,4 +1,4 @@
-# Code Showcase App (Vite + TypeScript)
+# Code Shelf App (Vite + TypeScript)
 
 A modern React web application built with **Vite** and **TypeScript** for showcasing code snippets with beautiful syntax highlighting and copy functionality. Built with React, Material-UI, and React Router.
 
@@ -91,17 +91,20 @@ src/
 ## 📄 Pages
 
 ### Home
+
 - Welcome page with feature overview
 - Quick navigation to other sections
 - Beautiful hero section with call-to-action buttons
 
 ### Code Showcase
+
 - Collection of code examples in various languages
 - Syntax highlighting for JavaScript, JSX, TypeScript, CSS, Python, SQL
 - Copy functionality for each code block
 - Organized by programming language
 
 ### Examples
+
 - Interactive React component examples
 - Live preview of components in action
 - Side-by-side code and demo display
@@ -110,6 +113,7 @@ src/
 ## 💻 TypeScript Features
 
 ### Interfaces
+
 ```typescript
 interface CodeBlockProps {
   code: string
@@ -127,6 +131,7 @@ interface NavItem {
 ```
 
 ### Type Safety
+
 - Proper type definitions for all components
 - Type-safe state management with useState
 - Generic types for reusable components
@@ -169,14 +174,17 @@ To add new interactive examples:
 ## ⚙️ Configuration
 
 ### Vite Configuration
+
 The project uses Vite for fast development and building. Configuration is in `vite.config.ts`.
 
 ### TypeScript Configuration
+
 - Strict TypeScript configuration in `tsconfig.json`
 - Separate configurations for app and Node.js environments
 - ESLint integration for TypeScript
 
 ### Material-UI Theme
+
 Custom theme configuration in `src/main.tsx`:
 
 ```typescript
@@ -202,16 +210,19 @@ const theme = createTheme({
 ## 🌟 Key Improvements with Vite + TypeScript
 
 ### Performance
+
 - **Vite**: Lightning-fast hot module replacement (HMR)
 - **TypeScript**: Better IDE support and catch errors early
 - **Modern Build**: Optimized for modern browsers
 
 ### Developer Experience
+
 - **Type Safety**: Catch errors at compile time
 - **Better IntelliSense**: Enhanced IDE support
 - **Faster Development**: Vite's instant server start
 
 ### Code Quality
+
 - **Strict TypeScript**: Prevents runtime errors
 - **ESLint Integration**: Code quality enforcement
 - **Modern React**: Latest React features and patterns

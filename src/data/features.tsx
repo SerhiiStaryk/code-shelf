@@ -1,6 +1,6 @@
-import { Code, Style, Lightbulb, AutoAwesome, IntegrationInstructions } from '@mui/icons-material';
+import { Code, Link, Lightbulb, AutoAwesome, TipsAndUpdates } from '@mui/icons-material';
 import type { Feature } from '../types/data';
-import { PATH_TS_TIPS, PATH_CSS_TIPS, PATH_EXAMPLES, PATH_SHOWCASE, PATH_DESIGN_SYSTEM } from '../router/path';
+import { PATH_USEFUL_LINKS, PATH_TIPS, PATH_EXAMPLES, PATH_SHOWCASE, PATH_DESIGN_SYSTEM } from '../router/path';
 
 const defaultIconStyle = { fontSize: 40 };
 
@@ -18,16 +18,16 @@ export const features: Feature[] = [
     path: PATH_EXAMPLES,
   },
   {
-    icon: <Style sx={{ ...defaultIconStyle, color: 'warning.main' }} />,
-    title: 'CSS Tips',
-    description: 'Learn essential CSS techniques and best practices for modern web development.',
-    path: PATH_CSS_TIPS,
+    icon: <TipsAndUpdates sx={{ ...defaultIconStyle, color: 'warning.main' }} />,
+    title: 'Tips',
+    description: 'Learn useful tips and best practice.',
+    path: PATH_TIPS,
   },
   {
-    icon: <IntegrationInstructions sx={{ ...defaultIconStyle, color: 'info.main' }} />,
-    title: 'TypeScript Tips',
-    description: 'Master TypeScript with advanced patterns, type safety, and best practices.',
-    path: PATH_TS_TIPS,
+    icon: <Link sx={{ ...defaultIconStyle, color: 'info.main' }} />,
+    title: 'Useful Links',
+    description: 'Collection of useful links for work in web development.',
+    path: PATH_USEFUL_LINKS,
   },
   {
     icon: <AutoAwesome sx={{ ...defaultIconStyle, color: 'error.main' }} />,

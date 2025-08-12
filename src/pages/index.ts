@@ -1,6 +1,6 @@
 export { Home } from './Home';
-export { TSTips } from './TSTips';
-export { CSSTips } from './CSSTips';
+export { UsefulLinks } from './UsefulLinks';
+export { Tips } from './Tips';
 export { Examples } from './Examples';
 export { CodeShowcase } from './CodeShowcase';
 export { DesignSystem } from './DesignSystem';
