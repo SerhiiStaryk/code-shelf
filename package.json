@@ -1,7 +1,7 @@
 {
   "name": "code-shelf",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "homepage": "https://serhiistaryk.github.io/code-shelf/",
   "type": "module",
   "scripts": {

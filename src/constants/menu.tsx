@@ -1,12 +1,12 @@
-import { AutoAwesome, Code, Home, IntegrationInstructions, Lightbulb, Style } from '@mui/icons-material';
+import { AutoAwesome, Code, Home, Link, Lightbulb, TipsAndUpdates } from '@mui/icons-material';
 import type { NavItem } from '../types/menu';
 import {
-  PATH_CSS_TIPS,
+  PATH_TIPS,
   PATH_DESIGN_SYSTEM,
   PATH_EXAMPLES,
   PATH_ROOT,
   PATH_SHOWCASE,
-  PATH_TS_TIPS,
+  PATH_USEFUL_LINKS,
 } from '../router/path';
 
 export const navItems: NavItem[] = [
@@ -29,16 +29,16 @@ export const navItems: NavItem[] = [
     description: 'Interactive code examples',
   },
   {
-    path: PATH_CSS_TIPS,
-    label: 'CSS Tips',
-    icon: <Style />,
-    description: 'CSS techniques and best practices',
+    path: PATH_TIPS,
+    label: 'Tips',
+    icon: <TipsAndUpdates />,
+    description: 'Useful tips and tricks',
   },
   {
-    path: PATH_TS_TIPS,
-    label: 'TypeScript Tips',
-    icon: <IntegrationInstructions />,
-    description: 'TypeScript patterns and tips',
+    path: PATH_USEFUL_LINKS,
+    label: 'Useful Links',
+    icon: <Link />,
+    description: 'Collection of useful links for work in web development',
   },
   {
     path: PATH_DESIGN_SYSTEM,

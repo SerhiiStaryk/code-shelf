@@ -1,22 +1,11 @@
 import React, { useState } from 'react';
-import {
-  Box,
-  Typography,
-  Card,
-  CardContent,
-  Chip,
-  Tabs,
-  Tab,
-  Alert,
-  Stack,
-} from '@mui/material';
+import { Box, Typography, Card, CardContent, Chip, Tabs, Tab, Stack } from '@mui/material';
 import CodeBlock from '../../components/CodeBlock';
-import { tips } from '../../data/cssTips';
-import { categories } from './constants';
-import { CSSBestPractices } from '../../components/CSSBestPractices';
-import { UsefulCSSToolsAndResources } from '../../components/UsefulCSSToolsAndResources';
 
-export const CSSTips: React.FC = () => {
+import { categories } from './constants';
+import { tips } from '../../data/tips';
+
+export const Tips: React.FC = () => {
   const [activeTab, setActiveTab] = useState(0);
 
   const handleTabChange = (_: React.SyntheticEvent, newValue: number) => {
@@ -32,24 +21,14 @@ export const CSSTips: React.FC = () => {
         component='h1'
         gutterBottom
       >
-        CSS Tips & Tricks
+        Tips
       </Typography>
       <Typography
         variant='h6'
         color='text.secondary'
-        paragraph
       >
-        Essential CSS techniques and best practices for modern web development
+        Useful tips and tricks for working with web development.
       </Typography>
-      <Alert
-        severity='info'
-        sx={{ mb: 4 }}
-      >
-        <Typography variant='body2'>
-          These CSS tips cover everything from basic layout techniques to advanced performance optimizations. Each tip
-          includes practical code examples you can use in your projects.
-        </Typography>
-      </Alert>
       <Tabs
         value={activeTab}
         onChange={handleTabChange}
@@ -97,7 +76,6 @@ export const CSSTips: React.FC = () => {
               <Typography
                 variant='body2'
                 color='text.secondary'
-                paragraph
               >
                 {tip.description}
               </Typography>
@@ -112,10 +90,6 @@ export const CSSTips: React.FC = () => {
           </Card>
         ))}
       </Stack>
-
-      <CSSBestPractices />
-
-      <UsefulCSSToolsAndResources />
     </Box>
   );
 };

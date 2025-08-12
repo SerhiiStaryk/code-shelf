@@ -6,6 +6,8 @@ import { DesktopMenu } from '../DesktopMenu';
 import { MobileMenu } from '../MobileMenu';
 import { Logo } from '../Logo';
 
+const BASE_URL = import.meta.env.BASE_URL;
+
 export const Header: React.FC = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -15,7 +17,7 @@ export const Header: React.FC = () => {
     setMobileOpen(prev => !prev);
   };
 
-  const isActive = (path: string) => location.pathname === path;
+  const isActive = (path: string) => location.pathname === `${BASE_URL}${path}`;
 
   return (
     <AppBar

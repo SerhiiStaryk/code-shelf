@@ -1,12 +1,13 @@
 import { Box, Button, Grid, Typography } from '@mui/material';
 import { Link as RouterLink, useLocation } from 'react-router-dom';
-
 import { navItems } from '../../constants/menu';
+
+const BASE_URL = import.meta.env.BASE_URL;
 
 export const FooterMenu = () => {
   const location = useLocation();
 
-  const isActive = (path: string) => location.pathname === path;
+  const isActive = (path: string) => location.pathname === `${BASE_URL}${path}`;
 
   return (
     <Grid
