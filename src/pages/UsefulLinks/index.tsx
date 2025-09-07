@@ -1,5 +1,7 @@
 import React from 'react';
-import { Box, Typography, Card, CardContent, Paper, List, ListItem, ListItemText } from '@mui/material';
+import { Box, Typography, Paper } from '@mui/material';
+import { usefullLinks } from '../../data/usefullLinks';
+import { UsefullLinkCard } from '../../components/UsefullLinkCard';
 
 export const UsefulLinks: React.FC = () => {
   return (
@@ -29,129 +31,13 @@ export const UsefulLinks: React.FC = () => {
         </Typography>
 
         <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', md: '1fr 1fr' }, gap: 3 }}>
-          <Card>
-            <CardContent>
-              <Typography
-                variant='h6'
-                gutterBottom
-              >
-                Type Checkers
-              </Typography>
-              <List dense>
-                <ListItem>
-                  <ListItemText
-                    primary='TypeScript Compiler'
-                    secondary='Official TypeScript compiler'
-                  />
-                </ListItem>
-                <ListItem>
-                  <ListItemText
-                    primary='ESLint TypeScript'
-                    secondary='TypeScript-aware linting'
-                  />
-                </ListItem>
-                <ListItem>
-                  <ListItemText
-                    primary='Prettier'
-                    secondary='Code formatting with TypeScript support'
-                  />
-                </ListItem>
-              </List>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardContent>
-              <Typography
-                variant='h6'
-                gutterBottom
-              >
-                Development Tools
-              </Typography>
-              <List dense>
-                <ListItem>
-                  <ListItemText
-                    primary='TypeScript Playground'
-                    secondary='Online TypeScript editor'
-                  />
-                </ListItem>
-                <ListItem>
-                  <ListItemText
-                    primary='TypeScript Handbook'
-                    secondary='Official documentation'
-                  />
-                </ListItem>
-                <ListItem>
-                  <ListItemText
-                    primary='TypeScript Examples'
-                    secondary='Community examples and patterns'
-                  />
-                </ListItem>
-              </List>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardContent>
-              <Typography
-                variant='h6'
-                gutterBottom
-              >
-                Libraries & Frameworks
-              </Typography>
-              <List dense>
-                <ListItem>
-                  <ListItemText
-                    primary='Zod'
-                    secondary='TypeScript-first schema validation'
-                  />
-                </ListItem>
-                <ListItem>
-                  <ListItemText
-                    primary='io-ts'
-                    secondary='Runtime type validation'
-                  />
-                </ListItem>
-                <ListItem>
-                  <ListItemText
-                    primary='TypeScript ESLint'
-                    secondary='TypeScript-specific linting rules'
-                  />
-                </ListItem>
-              </List>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardContent>
-              <Typography
-                variant='h6'
-                gutterBottom
-              >
-                Learning Resources
-              </Typography>
-              <List dense>
-                <ListItem>
-                  <ListItemText
-                    primary='TypeScript Deep Dive'
-                    secondary='Comprehensive guide'
-                  />
-                </ListItem>
-                <ListItem>
-                  <ListItemText
-                    primary='TypeScript Weekly'
-                    secondary='Weekly newsletter'
-                  />
-                </ListItem>
-                <ListItem>
-                  <ListItemText
-                    primary='TypeScript Community'
-                    secondary='Discord and forums'
-                  />
-                </ListItem>
-              </List>
-            </CardContent>
-          </Card>
+          {usefullLinks.map(category => (
+            <UsefullLinkCard
+              title={category.title}
+              links={category.links}
+              key={category.title}
+            />
+          ))}
         </Box>
       </Paper>
     </Box>

@@ -12,6 +12,7 @@ export const Layout = () => (
     >
       <Box
         sx={{
+          paddingTop: '64px',
           minHeight: '100vh',
           backgroundColor: 'background.default',
           display: 'flex',
