@@ -20,7 +20,6 @@ A modern React web application built with **Vite** and **TypeScript** for showca
 - **Material-UI (MUI) v7** - Beautiful UI components
 - **React Router** - Client-side routing
 - **React Syntax Highlighter** - Code syntax highlighting
-- **Emotion** - CSS-in-JS styling
 
 ## 🚀 Getting Started
 
@@ -45,13 +44,13 @@ npm install
 npm run dev
 ```
 
-5. Open [http://localhost:5173](http://localhost:5173) to view it in the browser
+5. Open [http://localhost:5173/code-shelf/](http://localhost:5173/code-shelf/) to view it in the browser
 
 ## 🚀 Deployment
 
 ### GitHub Pages
 
-This project is configured for automatic deployment to GitHub Pages. The deployment happens automatically when you push to the `main` or `master` branch.
+This project is configured for automatic deployment to GitHub Pages. The deployment happens automatically when you push to the `main`
 
 #### Manual Deployment
 
@@ -110,25 +109,20 @@ src/
 - Side-by-side code and demo display
 - Includes Counter, Form Controls, and Timer components
 
-## 💻 TypeScript Features
+### Tips
 
-### Interfaces
+-
+-
 
-```typescript
-interface CodeBlockProps {
-  code: string
-  language?: string
-  title?: string
-  description?: string
-  showLineNumbers?: boolean
-}
+### Useful links
 
-interface NavItem {
-  path: string
-  label: string
-  icon: React.ReactElement
-}
-```
+-
+-
+
+### Design System
+
+-
+-
 
 ### Type Safety
 
@@ -190,21 +184,33 @@ Custom theme configuration in `src/main.tsx`:
 ```typescript
 const theme = createTheme({
   palette: {
-    mode: 'light',
     primary: {
-      main: '#1976d2',
+      main: '#1E2A38',
     },
     secondary: {
-      main: '#dc004e',
+      main: '#A4D3F5',
     },
     background: {
-      default: '#f5f5f5',
+      default: '#F5F5F5',
+      paper: '#FFFFFF',
     },
   },
   typography: {
-    fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
+    fontFamily: ['Roboto', 'Inter', 'Roboto Mono', 'sans-serif'].join(','),
+    h4: {
+      fontWeight: 600,
+      color: '#1E2A38',
+    },
+    h5: {
+      fontWeight: 500,
+      color: '#1E2A38',
+    },
+    body1: {
+      color: '#333333',
+    },
   },
-})
+  components: {},
+});
 ```
 
 ## 🌟 Key Improvements with Vite + TypeScript
