@@ -22,7 +22,7 @@ export const Header: React.FC = () => {
   return (
     <AppBar
       elevation={2}
-      position='static'
+      position='fixed'
     >
       <Toolbar sx={{ justifyContent: 'space-between' }}>
         <Logo />
