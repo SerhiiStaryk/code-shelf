@@ -1,6 +1,6 @@
-import { Code, Link, Lightbulb, AutoAwesome, TipsAndUpdates } from '@mui/icons-material';
+import { Code, Link, AutoAwesome, TipsAndUpdates } from '@mui/icons-material';
 import type { Feature } from '../types/data';
-import { PATH_USEFUL_LINKS, PATH_TIPS, PATH_EXAMPLES, PATH_SHOWCASE, PATH_DESIGN_SYSTEM } from '../router/path';
+import { PATH_USEFUL_LINKS, PATH_TIPS, PATH_SHOWCASE, PATH_DESIGN_SYSTEM } from '../router/path';
 
 const defaultIconStyle = { fontSize: 40 };
 
@@ -10,12 +10,6 @@ export const features: Feature[] = [
     title: 'Code Showcase',
     description: 'Share and display your code snippets with beautiful syntax highlighting and copy functionality.',
     path: PATH_SHOWCASE,
-  },
-  {
-    icon: <Lightbulb sx={{ ...defaultIconStyle, color: 'secondary.main' }} />,
-    title: 'Live Examples',
-    description: 'See your code in action with interactive examples and live previews.',
-    path: PATH_EXAMPLES,
   },
   {
     icon: <TipsAndUpdates sx={{ ...defaultIconStyle, color: 'warning.main' }} />,
@@ -32,7 +26,8 @@ export const features: Feature[] = [
   {
     icon: <AutoAwesome sx={{ ...defaultIconStyle, color: 'error.main' }} />,
     title: 'Design System',
-    description: 'Comprehensive component library and design patterns for consistent UI development.',
+    description: `A design system is a collection of reusable components, styles, and guidelines that help maintain 
+consistency across an application or product.`,
     path: PATH_DESIGN_SYSTEM,
   },
 ];

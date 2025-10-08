@@ -2,7 +2,7 @@ import React from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import { Box, Typography, Card, CardContent, CardActions, Button, Paper, useTheme } from '@mui/material';
 import { features } from '../../data/features';
-import { PATH_EXAMPLES, PATH_SHOWCASE } from '../../router/path';
+import { PATH_SHOWCASE } from '../../router/path';
 
 const BASE_URL = import.meta.env.BASE_URL;
 
@@ -50,22 +50,6 @@ export const Home: React.FC = () => {
             }}
           >
             Explore Code
-          </Button>
-          <Button
-            component={RouterLink}
-            to={`${BASE_URL}${PATH_EXAMPLES}`}
-            variant='outlined'
-            size='large'
-            sx={{
-              borderColor: 'white',
-              color: 'white',
-              '&:hover': {
-                borderColor: 'white',
-                backgroundColor: 'rgba(255, 255, 255, 0.1)',
-              },
-            }}
-          >
-            View Examples
           </Button>
         </Box>
       </Paper>

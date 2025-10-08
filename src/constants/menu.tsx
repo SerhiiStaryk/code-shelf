@@ -1,13 +1,6 @@
-import { AutoAwesome, Code, Home, Link, Lightbulb, TipsAndUpdates } from '@mui/icons-material';
+import { AutoAwesome, Code, Home, Link, TipsAndUpdates } from '@mui/icons-material';
 import type { NavItem } from '../types/menu';
-import {
-  PATH_TIPS,
-  PATH_DESIGN_SYSTEM,
-  PATH_EXAMPLES,
-  PATH_ROOT,
-  PATH_SHOWCASE,
-  PATH_USEFUL_LINKS,
-} from '../router/path';
+import { PATH_TIPS, PATH_DESIGN_SYSTEM, PATH_ROOT, PATH_SHOWCASE, PATH_USEFUL_LINKS } from '../router/path';
 
 export const navItems: NavItem[] = [
   {
@@ -21,12 +14,6 @@ export const navItems: NavItem[] = [
     label: 'Code Showcase',
     icon: <Code />,
     description: 'Share and display code snippets',
-  },
-  {
-    path: PATH_EXAMPLES,
-    label: 'Examples',
-    icon: <Lightbulb />,
-    description: 'Interactive code examples',
   },
   {
     path: PATH_TIPS,
