@@ -44,11 +44,6 @@ export const usefullLinks = [
         description: 'Comprehensive TypeScript guide',
       },
       {
-        name: 'TypeScript Weekly',
-        url: 'https://www.typescriptweekly.com/',
-        description: 'Weekly TypeScript news and articles',
-      },
-      {
         name: 'TypeScript Community',
         url: 'https://www.reddit.com/r/typescript/',
         description: 'Reddit community for TypeScript discussions',

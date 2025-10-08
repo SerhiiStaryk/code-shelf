@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { Box, Typography, Card, CardContent, Chip, Tabs, Tab, Stack } from '@mui/material';
-import CodeBlock from '../../components/CodeBlock';
+import { Box, Typography, Tabs, Tab, Stack } from '@mui/material';
 
 import { categories } from './constants';
 import { tips } from '../../data/tips';
+import { CodeCard } from '../../components/CodeCard';
 
 export const Tips: React.FC = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -46,49 +46,16 @@ export const Tips: React.FC = () => {
         ))}
       </Tabs>
       <Stack spacing={3}>
-        {filteredTips.map((tip, index) => (
-          <Card
-            key={index}
-            sx={{
-              transition: 'all 0.3s ease',
-              '&:hover': {
-                transform: 'translateY(-2px)',
-                boxShadow: 3,
-              },
-            }}
-          >
-            <CardContent>
-              <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
-                <Chip
-                  label={tip.category}
-                  size='small'
-                  color='primary'
-                  sx={{ mr: 2 }}
-                />
-                <Typography
-                  variant='h6'
-                  component='h3'
-                >
-                  {tip.title}
-                </Typography>
-              </Box>
-
-              <Typography
-                variant='body2'
-                color='text.secondary'
-              >
-                {tip.description}
-              </Typography>
-
-              <CodeBlock
-                title='CSS Code'
-                language='css'
-                code={tip.code}
-                showLineNumbers={false}
-              />
-            </CardContent>
-          </Card>
-        ))}
+        {filteredTips.length === 0 ? (
+          <Typography variant='body1'>No tips available for this category.</Typography>
+        ) : (
+          filteredTips.map((tip, index) => (
+            <CodeCard
+              key={index}
+              example={tip}
+            />
+          ))
+        )}
       </Stack>
     </Box>
   );
